@@ -1,4 +1,16 @@
 #!/usr/bin/python3
-from models.base_model import BaseModel
+"""Doc
+"""
+from models.tmp_base_model import *
+from models.tmp_base_model import BaseModel
 
-bm = BaseModel()
+
+class BaseModel(BaseModel):
+    """Doc
+    """
+
+    def __init__(self, *args, **kwargs):
+        """Doc
+        """
+        self.id = "Fake"
+        
