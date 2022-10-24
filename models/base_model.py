@@ -8,7 +8,7 @@ from venv import create
 
 class BaseModel:
 
-    def __init__(self, id):
+    def __init__(self, id, create_at=datetime, update_at=datetime):
         self.id = str(uuid4())
         self.create_at = datetime.now()
         self.update_at = datetime.now()
@@ -26,6 +26,6 @@ class BaseModel:
     def to_dict(self):
         nDict = self.__dict__
         nDict["__class__"] = __class__.__name__
-        nDict["created_at"] = self.create_at.isoformat
-        nDict["update_at"] = self.update_at.isoformat
+        nDict["created_at"] = self.create_at.isoformat()
+        nDict["update_at"] = self.update_at.isoformat()
         return self.__dict__
