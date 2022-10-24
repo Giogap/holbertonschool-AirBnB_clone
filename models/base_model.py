@@ -31,8 +31,9 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        nDict = self.__dict__
+        nDict = self.__dict__.copy()
         nDict["__class__"] = __class__.__name__
         nDict["created_at"] = self.created_at.isoformat()
         nDict["updated_at"] = self.updated_at.isoformat()
-        return self.__dict__
+        nDict["__class__"] = self.__class__.__name__
+        return nDict
