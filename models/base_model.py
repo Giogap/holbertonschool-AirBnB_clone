@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+""" Class BaseModel"""
 
 from unittest.mock import create_autospec
 from uuid import uuid4
@@ -15,10 +15,11 @@ class BaseModel:
 
 
     def __str__(self):
-        return "[BaseModel] {} {}".format(self.id, self.__dict__)
+        return "[BaseModel] ({}) {}".format(self.id, self.__dict__)
 
     
     def save(self):
+        """ """
         self.update_at = datetime.now()
 
     def to_dict(self):
@@ -27,5 +28,3 @@ class BaseModel:
         nDict["created_at"] = self.create_at.isoformat
         nDict["update_at"] = self.update_at.isoformat
         return self.__dict__
-
-
