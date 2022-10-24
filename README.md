@@ -4,12 +4,12 @@
 
 ## Table of Contents
 
-[Description of the Project](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-project/)
-[Description of the command interpreter](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-command-interpreter).
-[How to Start It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-start-it)
-[How to Use It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-use-it)
-[Examples](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#examples)
-[Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
+- [Description of the Project](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-project/)
+- [Description of the command interpreter](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-command-interpreter).
+- [How to Start It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-start-it)
+- [How to Use It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-use-it)
+- [Examples](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#examples)
+- [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
 
 
 ## Description of the Project
@@ -84,7 +84,7 @@ $
 ```
 All tests should also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
 
-![This is an image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221024%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221024T163224Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=fa63598bc4a5a7041866b9f939f5b698d6b8117dc94999b364dc4ed3e8381d5a)
+![This is an image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221024%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221024T183930Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=14fe1066cf4b091e1bc67957b95248e2e3d069d492a21efc8977ede18b441193)
 
 ## How to Use It
 
