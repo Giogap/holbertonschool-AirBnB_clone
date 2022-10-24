@@ -10,7 +10,9 @@
     [How to Start It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-start-it)
     [How to Use It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-use-it)
     [Examples](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#examples)
-    Authors [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
+
+    
+    [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
 
 ## Description of the Project
 
