@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Class BaseModel"""
 
+from multiprocessing.sharedctypes import Value
 from unittest.mock import create_autospec
 from uuid import uuid4
 from datetime import datetime
@@ -8,7 +9,10 @@ from venv import create
 
 class BaseModel:
 
-    def __init__(self, id, create_at=datetime, update_at=datetime):
+    def __init__(self, *args, **kwargs):
+        if kwargs:
+            for key, value in kwargs.items():
+                pass
         self.id = str(uuid4())
         self.create_at = datetime.now()
         self.update_at = datetime.now()
