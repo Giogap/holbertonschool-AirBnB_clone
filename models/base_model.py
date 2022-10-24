@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """"""
 
+from unittest.mock import create_autospec
 from uuid import uuid4
 from datetime import datetime
+from venv import create
 
 class BaseModel:
 
@@ -16,10 +18,14 @@ class BaseModel:
         return "[BaseModel] {} {}".format(self.id, self.__dict__)
 
     
-    def save(self, updated_at):
-        pass
+    def save(self):
+        self.update_at = datetime.now()
 
     def to_dict(self):
-        pass
+        nDict = self.__dict__
+        nDict["__class__"] = __class__.__name__
+        nDict["created_at"] = self.create_at.isoformat
+        nDict["update_at"] = self.update_at.isoformat
+        return self.__dict__
 
 
