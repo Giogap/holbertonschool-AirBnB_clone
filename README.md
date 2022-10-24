@@ -14,6 +14,8 @@
 
     [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
 
+    This site was built using [GitHub Pages](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
+
 ## Description of the Project
 
 **First step: Write a command interpreter to manage your AirBnB objects.**
