@@ -8,7 +8,7 @@ from venv import create
 
 class BaseModel:
 
-    def __init__(self, id, create_at, update_at):
+    def __init__(self, id):
         self.id = str(uuid4())
         self.create_at = datetime.now()
         self.update_at = datetime.now()
