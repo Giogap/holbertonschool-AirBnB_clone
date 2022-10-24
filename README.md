@@ -4,12 +4,12 @@
 
 ## Table of Contents
 
-    [Description of the Project](https://github.com/Giogap/holbertonschool-AirBnB_clone#Description of the Project).
-    [Description of the command interpreter](https://github.com/Giogap/holbertonschool-AirBnB_clone#Description of the command interpreter).
-    [How to Start It](https://github.com/Giogap/holbertonschool-AirBnB_clone#How to Start It)
-    [How to Use It](https://github.com/Giogap/holbertonschool-AirBnB_clone#How to Use It)
-    [Examples](https://github.com/Giogap/holbertonschool-AirBnB_clone#Examples)
-    [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone#Authors).
+    [Description of the Project](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-project).
+    [Description of the command interpreter](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#description-of-the-command-interpreter).
+    [How to Start It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-start-it)
+    [How to Use It](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#how-to-use-it)
+    [Examples](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#examples)
+    [Authors](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/README.md#authors).
 
 ## Description of the Project
 
