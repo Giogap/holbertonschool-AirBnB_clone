@@ -1,16 +1,4 @@
 #!/usr/bin/python3
-"""Doc
-"""
-from models.tmp_base_model import *
-from models.tmp_base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
-
-class BaseModel(BaseModel):
-    """Doc
-    """
-
-    def __init__(self, *args, **kwargs):
-        """Doc
-        """
-        self.id = "Fake"
-        
+fs = FileStorage()
