@@ -11,9 +11,11 @@ from datetime import datetime
 
 class TestsBaseModel(unittest.TestCase):
     """ Test BaseModel """
-    def testBaseMdlId(self):
-        my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
-        self.assertEqual(my_model.my_number, 89)
+    def testBaseMdlSave(self):
+        myModel = BaseModel()
+        d1 = myModel.updated_at
+        d1.save()
+        myModel2 = d1.update_at
+        self.assertNotEqual(myModel, myModel2)
+
 
