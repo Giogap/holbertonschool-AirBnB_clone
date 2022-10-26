@@ -28,8 +28,8 @@ class FileStorage:
         """ Deserializes the JSON file """
         try:
             with open(self.file_path, "r") as f:
-                result = f.read()
-                self.__objects = json.load(result)
+                nDict = f.read()
+                self.__objects = json.load(f, nDict)
         except FileNotFoundError:
             pass
 
