@@ -7,3 +7,4 @@ from models.engine.file_storage import FileStorage
 storagage = FileStorage()
 
 storagage.reload()
+storagage.new()
