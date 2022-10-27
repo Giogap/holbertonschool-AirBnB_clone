@@ -2,8 +2,11 @@
 """ class FileStorage """
 
 
+from logging import exception
+from msilib.schema import File
 from models.base_model import BaseModel
 import json
+import os
 
 
 class FileStorage:
@@ -17,22 +20,28 @@ class FileStorage:
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
-        key = (obj.__class__.__name).id
-        self.__objects[key] = obj
+        key = "{} {}".format(type(obj).__name__, obj.id)
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """ Serializes __objects """
-        nDict = {}
-        with open(self.__file_path, "w", encoding="utf-8") as f:
+        with open(FileStorage.__file_path, "w+") as f:
+            nDict = {k: v.to_dict() for k, v in FileStorage.__objects.items}
             json.dump(nDict, f)
 
     def reload(self):
         """ Deserializes the JSON file """
+        if not os.path.isfile(FileStorage.__file_path):
+            return
+        loaded_dict = json.load
         try:
-            with open(self.file_path, "r", encoding="utf-8") as f:
-                result = f.read()
-                self.__objects = json.load(result)
-        except FileNotFoundError:
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+                FileStorage.__objects = json.load(f)
+
+            for key, value in loaded_dict.items:
+                obj = eval(loaded_dict["class"](**value))
+                FileStorage.__objects[key] = obj
+        except:
             pass
 
 
