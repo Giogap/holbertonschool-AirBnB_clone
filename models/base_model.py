@@ -11,12 +11,10 @@ class BaseModel:
         """ Public instance attributes """
         if kwargs:
             for key, value in kwargs.items():
-                if key == "create_at":
-                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                if key == "update_at":
-                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key != "__class__":
                     setattr(self, key, value)
+                if key in ["created_at", "update_at"]:
+                    setattr(self, key, datetime.fromisoformat(value))
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
@@ -41,5 +39,5 @@ class BaseModel:
                 nDict[key] = nDict[key].isoformat()
             if key == "created_at":
                 nDict[key] = nDict[key].isoformat()
-            nDict["__calss__"] = self.__class__.__name__
+            nDict["__class__"] = self.__class__.__name__
         return nDict

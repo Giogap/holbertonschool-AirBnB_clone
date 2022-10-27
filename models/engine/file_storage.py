@@ -39,7 +39,7 @@ class FileStorage:
             for key, value in l_dict.items:
                 obj = eval(value["__class__"])(**value)
                 FileStorage.__objects[key] = obj
-        except Exception:
+        except Exception as e:
             pass
 
 
