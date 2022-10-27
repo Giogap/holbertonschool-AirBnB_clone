@@ -36,7 +36,9 @@ class BaseModel:
     def to_dict(self):
         """ Returns a dictionary of __dict__ """
         nDict = self.__dict__.copy()
-        nDict["created_at"] = self.created_at.isoformat()
-        nDict["updated_at"] = self.updated_at.isoformat()
-        nDict["__class__"] = self.__class__.__name__
+        for key in nDict.keys():
+            if key == "updated_at":
+                nDict[key] = nDict[key].isoformat()
+            if key == "created_at":
+                nDict[key] = nDict[key].isoformat()
         return nDict
