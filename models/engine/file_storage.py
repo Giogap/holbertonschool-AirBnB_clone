@@ -14,11 +14,11 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
-        key = "{} {}".format(type(obj).__name__, obj.id)
+        key = "{}.{}".format(type(obj).__name__, obj.id)
         FileStorage.__objects[key] = obj
 
     def save(self):
@@ -37,7 +37,7 @@ class FileStorage:
                 l_dict = json.load(f)
 
             for key, value in l_dict.items:
-                obj = eval(value["class"])(**value)
+                obj = eval(value["__class__"])(**value)
                 FileStorage.__objects[key] = obj
         except Exception:
             pass

@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ Class BaseModel"""
-
-
 from uuid import uuid4
 from datetime import datetime
 from models import storage
@@ -23,6 +21,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """ should print: [<class name>] (<self.id>) <self.__dict__> """
