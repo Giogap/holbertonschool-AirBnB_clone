@@ -2,9 +2,7 @@
 """ class FileStorage """
 
 
-from logging import exception
-from msilib.schema import File
-from models.base_model import BaseModel
+
 import json
 import os
 
@@ -31,17 +29,17 @@ class FileStorage:
 
     def reload(self):
         """ Deserializes the JSON file """
+        from models.base_model import BaseModel
         if not os.path.isfile(FileStorage.__file_path):
             return
-        loaded_dict = json.load
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-                FileStorage.__objects = json.load(f)
+                loaded_dict = json.load(f)
 
             for key, value in loaded_dict.items:
                 obj = eval(loaded_dict["class"](**value))
                 FileStorage.__objects[key] = obj
-        except:
+        except Exception:
             pass
 
 
