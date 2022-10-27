@@ -37,7 +37,7 @@ class FileStorage:
                 l_dict = json.load(f)
 
             for key, value in l_dict.items:
-                obj = eval(value["class"](**value))
+                obj = eval(value["class"])(**value)
                 FileStorage.__objects[key] = obj
         except Exception:
             pass
