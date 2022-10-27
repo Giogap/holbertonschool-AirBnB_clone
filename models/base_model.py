@@ -41,4 +41,5 @@ class BaseModel:
                 nDict[key] = nDict[key].isoformat()
             if key == "created_at":
                 nDict[key] = nDict[key].isoformat()
+            nDict["__calss__"] = self.__class__.__name__
         return nDict
