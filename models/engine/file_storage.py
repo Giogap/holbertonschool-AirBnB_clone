@@ -34,10 +34,10 @@ class FileStorage:
             return
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-                loaded_dict = json.load(f)
+                l_dict = json.load(f)
 
-            for key, value in loaded_dict.items:
-                obj = eval(loaded_dict["class"](**value))
+            for key, value in l_dict.items:
+                obj = eval(value["class"](**value))
                 FileStorage.__objects[key] = obj
         except Exception:
             pass
