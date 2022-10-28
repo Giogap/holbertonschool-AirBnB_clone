@@ -8,6 +8,7 @@ import cmd, sys
 class HBNBCommand(cmd.Cmd):
     """ clas HBNB cmd """
     prompt = '(hbnb) '
+    filen = None
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
