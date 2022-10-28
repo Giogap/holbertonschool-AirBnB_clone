@@ -11,7 +11,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     filen = None
 
-    def to_create(self, arg):
+    def do_create(self, arg):
         if not arg:
             print("** class name missing **")
         elif arg not in HBNBCommand.className.keys():
