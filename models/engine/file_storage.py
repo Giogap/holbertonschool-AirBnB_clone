@@ -24,9 +24,9 @@ class FileStorage:
 
     def save(self):
         """ Serializes __objects """
-        with open(FileStorage.__file_path, "w+") as f:
-            nDict = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(nDict, f)
+        nDict = {k: v.to_dict() for k, v in self.all().items()}
+        with open(FileStorage.__file_path, mode="w+", encoding="utf-8") as f:
+            f.write(json.dumps(nDict))
 
     def reload(self):
         """ Deserializes the JSON file """
