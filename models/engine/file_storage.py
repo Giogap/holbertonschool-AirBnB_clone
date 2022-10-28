@@ -31,6 +31,6 @@ class FileStorage:
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
                 l_dict = f.read()
-        py_obj = json.loads(l_dict)
-        FileStorage.__objects = {k: eval(f"{v['__class__']}(**{v})")
-        for k, v in py_obj.items()}
+                py_obj = json.loads(l_dict)
+                FileStorage.__objects = {k: eval(
+                    f"{v['__class__']}(**{v})") for k, v in py_obj.items()}
