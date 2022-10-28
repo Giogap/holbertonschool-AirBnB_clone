@@ -9,12 +9,16 @@ class BaseModel:
     """ Class BaseModel """
     def __init__(self, *args, **kwargs):
         """ Public instance attributes """
-        if kwargs:
+        if not kwargs == {}:
             for key, value in kwargs.items():
                 if key != "__class__":
                     setattr(self, key, value)
-                if key in ["created_at", "update_at"]:
-                    setattr(self, key, datetime.fromisoformat(value))
+
+            self.created_at = datetime.strptime(
+                self.created_at, '%Y-%m-%dT%H:%M:%S.%f')
+            self.updated_at = datetime.strptime(
+                self.updated_at, '%Y-%m-%dT%H:%M:%S.%f')
+
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
@@ -34,10 +38,7 @@ class BaseModel:
     def to_dict(self):
         """ Returns a dictionary of __dict__ """
         nDict = self.__dict__.copy()
-        for key in nDict.keys():
-            if key == "updated_at":
-                nDict[key] = nDict[key].isoformat()
-            if key == "created_at":
-                nDict[key] = nDict[key].isoformat()
-            nDict["__class__"] = self.__class__.__name__
+        nDict["__class__"] = self.__class__.__name__
+        nDict["created_at"] = nDict["created_at"].isoformat()
+        nDict["updated_at"] = nDict["updated_at"].isoformat()
         return nDict
