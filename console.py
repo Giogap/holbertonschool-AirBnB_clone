@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """ empty line """
-        return cmd.Cmd.emptyline(self)
+        return cmd.Cmd.emptyline()
     
 
 if __name__ == '__main__':
