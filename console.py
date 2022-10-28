@@ -12,14 +12,17 @@ class HBNBCommand(cmd.Cmd):
     filen = None
 
     def do_create(self, arg):
+        """ Creates a new instance of BaseModel, saves JSON file"""
         if not arg:
-            print("** class name missing **")
-        elif arg not in HBNBCommand.className.keys():
-            print("** class doesn't exist **")
+            print('** class name missing **')
         else:
-            obj = HBNBCommand.className[arg]()
-            HBNBCommand.className[arg].save(obj)
-            print(obj, id)
+            try:
+                new_obj = eval(arg)()
+                new_obj.save()
+                print(new_obj.id)
+            except (NameError, SyntaxError):
+                print("** class doesn't exist **")
+                pass
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
