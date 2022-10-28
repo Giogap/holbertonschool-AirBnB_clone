@@ -18,6 +18,8 @@ class HBNBCommand(cmd.Cmd):
         """Quit command to exit the program"""
         return True
 
+    cmd.emptyline()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
