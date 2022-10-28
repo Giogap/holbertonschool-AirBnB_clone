@@ -19,6 +19,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     cmd.emptyline()
+    """ empty line """
 
 
 if __name__ == '__main__':
