@@ -85,6 +85,8 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
         listArg = arg.split(" ")
+        objs = models.storage.all()
+        string = f'{listArg[0]}.{listArg[1]}'
         if self.parseline(arg)[0] not in self.list_class:
             print("** class doesn't exist **")
         elif len(arg) == 0:
@@ -95,14 +97,11 @@ class HBNBCommand(cmd.Cmd):
             print ("** attribute name missing **")
         elif len(listArg) == 3:
             print("** value missing **")
+        elif string not in objs.keys():
+            print("** no instance found **")
         else:
-            objs = models.storage.all()
-            string = f'{listArg[0]}.{listArg[1]}'
-            if string not in objs.keys():
-                print("** no instance found **")
-            else:
-                setattr(objs[string], listArg[2], listArg[3])
-                models.storage.save()
+            setattr(objs[string], listArg[2], listArg[3])
+            models.storage.save()
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
