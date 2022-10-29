@@ -3,6 +3,8 @@
 console that contains the entry point of the command interpreter
 """
 import cmd
+
+from click import command
 from models.base_model import BaseModel
 import models
 from models.city import City
@@ -69,6 +71,18 @@ class HBNBCommand(cmd.Cmd):
             else:
                 del models.storage.all()[key]
                 models.storage.save()
+
+    def do_all(self, arg):
+        """Prints all string all instances based or not on the class name"""
+        command = self.parseline(arg)[0]
+        objs = models.storage.all()
+        if command is None:
+            print([str(objs[obj]) for obj in objs])
+        elif command  in self.list_class:
+            keys = objs.keys()
+            print([str(objs[key]) for key in keys if key.starwith(command)])
+        else:
+            print("** class doesn't exist **")
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
