@@ -4,7 +4,6 @@ console that contains the entry point of the command interpreter
 """
 import cmd
 
-from click import command
 from models.base_model import BaseModel
 import models
 from models.city import City
