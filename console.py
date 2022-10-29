@@ -85,23 +85,21 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
         listArg = arg.split(" ")
-        if self.parseline(arg)[0] not in self.list_class:
-            print("** class doesn't exist **")
-        elif len(arg) == 0:
+        if len(arg) == 0:
             print("** class name missing **")
+        elif self.parseline(arg)[0] not in self.list_class:
+            print("** class doesn't exist **")
         elif len(listArg) == 1:
             print("** instance id missing **")
+        elif len(listArg) == 2: 
+            print ("** attribute name missing **")
+        elif len(listArg) == 3:
+            print("** value missing **")
         else:
             objs = models.storage.all()
             string = f'{listArg[0]}.{listArg[1]}'
             if string not in objs.keys():
                 print("** no instance found **")
-            elif len(listArg) == 2: 
-                print ("** attribute name missing **")
-                return
-            elif len(listArg) == 3:
-                print("** value missing **")
-                return
             else:
                 setattr(objs[string], listArg[2], listArg[3])
                 models.storage.save()
