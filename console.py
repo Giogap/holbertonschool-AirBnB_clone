@@ -16,8 +16,15 @@ from models.amenity import Amenity
 class HBNBCommand(cmd.Cmd):
     """ clas HBNB cmd """
     prompt = '(hbnb) '
-    list_class = ["BaseModel", "State", "City",
-            "Amenity", "Place", "Review", "User"]
+    list_class = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "City": City,
+        "State": State,
+        "Review": Review,
+        "Amenity": Amenity,
+        "Place": Place
+    }
 
     def do_create(self, arg):
         """ Creates a new instance of BaseModel, saves JSON file"""
@@ -76,9 +83,9 @@ class HBNBCommand(cmd.Cmd):
         objs = models.storage.all()
         if command is None:
             print([str(objs[obj]) for obj in objs])
-        elif command  in self.list_class:
+        elif command in self.list_class:
             keys = objs.keys()
-            print([str(objs[key]) for key in keys if key.starwith(command)])
+            print([str(objs[key]) for key in keys if key.startswith(command)])
         else:
             print("** class doesn't exist **")
 
@@ -91,8 +98,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(listArg) == 1:
             print("** instance id missing **")
-        elif len(listArg) == 2: 
-            print ("** attribute name missing **")
+        elif len(listArg) == 2:
+            print("** attribute name missing **")
         elif len(listArg) == 3:
             print("** value missing **")
         else:
