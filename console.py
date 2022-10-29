@@ -16,20 +16,20 @@ from models.amenity import Amenity
 class HBNBCommand(cmd.Cmd):
     """ clas HBNB cmd """
     prompt = '(hbnb) '
-    list_class = ["BaseModel", "State", "City", "Amenity",
-                 "Place", "Review", "User"]
+    list_class = ["BaseModel", "State", "City",
+            "Amenity", "Place", "Review", "User"]
 
     def do_create(self, arg):
         """ Creates a new instance of BaseModel, saves JSON file"""
-        if not arg:
-            print('** class name missing **')
+        command = self.parseline(arg)[0]
+        if command is None:
+            print("** class name missing **")
+        elif command not in self.list_class:
+            print("** class doesn't exist **")
         else:
-            try:
-                new_obj = eval(arg)()
-                new_obj.save()
-                print(new_obj.id)
-            except (NameError, SyntaxError):
-                print("** class doesn't exist **")
+            new_obj = eval(command)()
+            new_obj.save()
+            print(new_obj.id)
 
     def do_show(self, arg):
         """
@@ -50,6 +50,25 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 print(instance)
+
+    def do_destroy(self, arg):
+        """Deletes an instance based on the class name and id"""
+        command = self.parseline(arg)[0]
+        arg = self.parseline(arg)[1]
+        if command is None:
+            print("** class name missing **")
+        elif command not in self.list_class:
+            print("** class doesn't exist **")
+        elif arg == "":
+            print("** instance id missing **")
+        else:
+            key = command + "." + arg
+            instance = models.storage.all().get(key)
+            if instance is None:
+                print("** no instance found **")
+            else:
+                del models.storage.all()[key]
+                models.storage.save()
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
