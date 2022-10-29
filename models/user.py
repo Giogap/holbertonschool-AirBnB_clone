@@ -4,8 +4,9 @@
 
 from models.base_model import BaseModel
 
-class User:
-    """"""
+
+class User(BaseModel):
+    """class User that inherits from BaseModel"""
 
     def __init__(self):
         self.email = ""
