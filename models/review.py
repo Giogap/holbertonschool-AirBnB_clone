@@ -1,4 +1,6 @@
 
 class Review:
     """"""
-    pass
+    place_id = ""
+    user_id = ""
+    text = ""
