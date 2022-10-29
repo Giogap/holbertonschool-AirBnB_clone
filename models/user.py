@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """class User that inherits from BaseModel"""
 
-import email
 
 from models.base_model import BaseModel
 
