@@ -21,6 +21,14 @@ class TestFileStorage(unittest.TestCase):
         """ Test FilePath"""
         self.assertFalse(hasattr(FileStorage(), "__file_path"), False)
 
+    def test_reload(self):
+        self.assertTrue(hasattr(FileStorage(), "reload"), True)
+
+    def test_reload_args(self):
+        storage = FileStorage()
+        with self.assertRaises(TypeError):
+            storage.reload(None)
+
     def test_fileStore_save(self):
         """Test FileStore Save"""
         storage = FileStorage()
