@@ -108,7 +108,13 @@ The console will be a tool to validate this storage engine
 | Command | Description |
 | --- | --- |
 | help | The help command is a command prompt,  command that's used to provide more information on another command. |
-| EOF | exit the program |
+| EOF | Exit the program. |
+| quit | Exit the program. |
+| create | Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. Ex: $ create BaseModel. |
+| show | Exit the program. |
+| destroy | Exit the program. |
+| all | Exit the program. |
+| update | Exit the program. |
 
 
 ## Examples
