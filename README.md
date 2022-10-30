@@ -107,8 +107,8 @@ The console will be a tool to validate this storage engine
 
 | Command | Description |
 | --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
+| help | The help command is a command prompt,  command that's used to provide more information on another command. |
+| EOF | exit the program |
 
 
 ## Examples
