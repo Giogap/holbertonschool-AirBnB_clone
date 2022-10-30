@@ -4,10 +4,9 @@
 
 
 import unittest
-import models
-from models.base_model import BaseModel
-import os
 from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
+import models
 
 
 class TestFileStorage(unittest.TestCase):
