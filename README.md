@@ -155,10 +155,12 @@ destroy:
 ```
 
 all:
+```
 ./console.py 
 (hbnb) all BaseModel
 ["[BaseModel] (24a40c4d-d6b9-4d48-999e-033a3dcf3e59) {'id': '24a40c4d-d6b9-4d48-999e-033a3dcf3e59', 'created_at': datetime.datetime(2022, 10, 28, 15, 42, 50, 756172), 'updated_at': datetime.datetime(2022, 10, 28, 15, 42, 50, 756225)}", "[BaseModel] (5acb1f7f-386a-473a-9b45-b68a01a33fb9) {'id': '5acb1f7f-386a-473a-9b45-b68a01a33fb9', 'created_at': datetime.datetime(2022, 10, 28, 16, 8, 56, 496681), 'updated_at': datetime.datetime(2022, 10, 28, 16, 8, 56, 496725)}", "[BaseModel] (0079d3d4-9527-44ba-92be-2f15061964ad) {'id': '0079d3d4-9527-44ba-92be-2f15061964ad', 'created_at': datetime.datetime(2022, 10, 29, 18, 31, 30, 922270), 'updated_at': datetime.datetime(2022, 10, 29, 18, 31, 30, 922286)}"]
 (hbnb) 
+```
 
 update:
 ./console.py 
