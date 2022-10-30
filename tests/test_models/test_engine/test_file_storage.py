@@ -31,19 +31,6 @@ class TestFileStorage(unittest.TestCase):
             file_json = r.read()
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
 
-    def test_file(self):
-        """test reload"""
-        storage = FileStorage()
-        obj = storage.all()
-        copy = obj.copy()
-        models.storage.reload()
-        copy2 = obj.copy()
-        self.assertEqual(len(copy), len(copy2))
-        storage.save()
-        self.assertIsInstance(storage._FileStorage__file_path, str)
-        self.assertIsInstance(storage._FileStorage__objects, dict)
-        self.assertTrue(os.path.exists("file.json"))
-
     def test_reload_storage(self):
         storage = FileStorage()
         storage.save()
