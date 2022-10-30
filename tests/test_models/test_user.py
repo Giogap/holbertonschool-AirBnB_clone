@@ -1,21 +1,35 @@
 #!/usr/bin/python3
-""" Test User """
-
+"""Test user"""
 import unittest
-from models import storage
-from models.base_model import BaseModel
 from models.user import User
+from models.base_model import BaseModel
 
 
 class TestUser(unittest.TestCase):
-    """ Test class User"""
-    def user(self):
-        my_user = User()
-        my_user.first_name = "Betty"
-        my_user.last_name = "Bar"
-        my_user.email = "airbnb@mail.com"
-        my_user.password = "root"
-        self.assertEqual(my_user.first_name, "Betty")
-        self.assertEqual(my_user.last_name, "Bar")
-        self.assertEqual(my_user.email, "airbnb@mail.com")
-        self.assertEqual(my_user.fpassword, "root")
+    """class Test from user"""
+
+    def test_user(self):
+        """Test User"""
+        u = User()
+        self.assertTrue(issubclass(u.__class__, BaseModel))
+        self.assertTrue(hasattr(u, "id"))
+        self.assertTrue(hasattr(u, "created_at"))
+        self.assertTrue(hasattr(u, "updated_at"))
+        self.assertTrue(hasattr(u, "first_name"))
+        self.assertTrue(hasattr(u, "last_name"))
+        self.assertTrue(hasattr(u, "email"))
+        self.assertTrue(hasattr(u, "password"))
+        self.assertEqual(u.first_name, "")
+        self.assertEqual(u.last_name, "")
+        self.assertEqual(u.email, "")
+        self.assertEqual(u.password, "")
+        u.first_name = "Betty"
+        u.last_name = "Bar"
+        u.email = "airbnb@mail.com"
+        u.password = "root"
+        s = f"[{u.__class__.__name__}] ({u.id}) {u.__dict__}"
+        self.assertEqual(s, str(u))
+
+
+if __name__ == '__main__':
+    unittest.main()
