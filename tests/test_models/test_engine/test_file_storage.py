@@ -31,6 +31,28 @@ class TestFileStorage(unittest.TestCase):
             file_json = r.read()
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
 
+    def test_reload(self):
+        """ Test Reload"""
+        storage = FileStorage()
+        base = BaseModel()
+        storage.save()
+        for obj in storage.all().values():
+            loaded = obj
+        self.assertEqual(base.to_dict()['id'], loaded.to_dict()['id'])
+
+    def test_reload_empty(self):
+        """ Doc """
+        storage = FileStorage()
+        with open('file.json', 'w') as f:
+            pass
+        with self.assertRaises(ValueError):
+            storage.reload()
+
+    def test_reload_none(self):
+        """ Doc """
+        storage = FileStorage()
+        self.assertEqual(storage.reload(), None)
+
 
 if __name__ == '__main__':
     unittest.main()
