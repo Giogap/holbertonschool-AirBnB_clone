@@ -105,6 +105,10 @@ The console will be a tool to validate this storage engine
 
 ## How to Use It
 
+| Console |
+| --- | --- |
+| Command | Description |
+| help | The help command is a command prompt,  command that's used to provide more information on another command.  |
 
 
 ## Examples
