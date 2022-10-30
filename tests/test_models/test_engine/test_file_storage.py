@@ -12,9 +12,10 @@ import os.path
 
 class TestFileStorage(unittest.TestCase):
     """TestCase FileStorage"""
-    storage = FileStorage()
-    obj = storage.all()
     def test_fileStorage(self):
+        storage = FileStorage()
+        obj = storage.all()
+    
         self.assertIsNotNone(obj)
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
