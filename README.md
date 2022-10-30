@@ -163,12 +163,14 @@ all:
 ```
 
 update:
+```
 ./console.py 
 (hbnb) create BaseModel
 683382c7-0351-4249-8987-ce2c42c0f1df
 (hbnb) update BaseModel 683382c7-0351-4249-8987-ce2c42c0f1df first_name "Betty"
 (hbnb) show BaseModel 683382c7-0351-4249-8987-ce2c42c0f1df
 [BaseModel] (683382c7-0351-4249-8987-ce2c42c0f1df) {'id': '683382c7-0351-4249-8987-ce2c42c0f1df', 'created_at': datetime.datetime(2022, 10, 29, 18, 39, 5, 144900), 'updated_at': datetime.datetime(2022, 10, 29, 18, 39, 5, 144949), 'first_name': '"Betty"'}
+```
 
 
 ## Authors
