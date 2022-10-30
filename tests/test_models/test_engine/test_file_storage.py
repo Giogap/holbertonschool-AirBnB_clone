@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Test FileStorage"""
 
+from ast import Store
 import unittest
 from models.engine.file_storage import FileStorage
 import models
@@ -10,6 +11,7 @@ import os
 
 class TestFileStorage(unittest.TestCase):
     """TestCase FileStorage"""
+
     def test_fileStorage(self):
         storage = FileStorage()
         obj = storage.all()
@@ -30,7 +32,7 @@ class TestFileStorage(unittest.TestCase):
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
 
     
-    def test_reload(self):
+    def test_file(self):
         """test reload"""
         storage = FileStorage()
         obj = storage.all()
@@ -42,6 +44,13 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsInstance(storage._FileStorage__file_path, str)
         self.assertIsInstance(storage._FileStorage__objects, dict)
         self.assertTrue(os.path.exists("file.json"))
+
+    def test_reload(self):
+        """ >Test Reload """
+        Storage = FileStorage()
+        Storage.reload()
+        self.assertIsNotNone(Storage.all())
+        self.assertIs(Storage.all(), Storage.all())
 
 
 if __name__ == '__main__':
