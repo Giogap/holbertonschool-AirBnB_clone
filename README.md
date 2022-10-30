@@ -140,15 +140,19 @@ bb711919-2e80-4ce2-85aa-454484f89013
 ```
 
 show:
+```
 ./console.py 
 (hbnb) show BaseModel bb711919-2e80-4ce2-85aa-454484f89013
 [BaseModel] (bb711919-2e80-4ce2-85aa-454484f89013) {'id': 'bb711919-2e80-4ce2-85aa-454484f89013', 'created_at': datetime.datetime(2022, 10, 29, 18, 31, 52, 943770), 'updated_at': datetime.datetime(2022, 10, 29, 18, 31, 52, 943843)}
 (hbnb)
+```
 
 destroy:
+```
 ./console.py 
 (hbnb) destroy BaseModel bb711919-2e80-4ce2-85aa-454484f89013
 (hbnb)
+```
 
 all:
 ./console.py 
