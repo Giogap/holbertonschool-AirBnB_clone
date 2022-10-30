@@ -111,8 +111,8 @@ The console will be a tool to validate this storage engine
 | EOF | Exit the program. |
 | quit | Exit the program. |
 | create | Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. Ex: $ create BaseModel. |
-| show | Exit the program. |
-| destroy | Exit the program. |
+| show | Prints the string representation of an instance based on the class name and id. Ex: $ show BaseModel 1234-1234-1234. |
+| destroy | Deletes an instance based on the class name and id (save the change into the JSON file). Ex: $ destroy BaseModel 1234-1234-1234. |
 | all | Exit the program. |
 | update | Exit the program. |
 
