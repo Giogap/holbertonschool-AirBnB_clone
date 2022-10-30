@@ -105,7 +105,20 @@ The console will be a tool to validate this storage engine
 
 ## How to Use It
 
+
+
 ## Examples
+
+Commad:
+Help:
+```
+./console.py 
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+```
 
 
 ## Authors
