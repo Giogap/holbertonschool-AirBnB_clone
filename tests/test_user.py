@@ -1,16 +1,33 @@
 #!/usr/bin/python3
 """ Test User """
 
-
 import unittest
-
+from models import storage
 from models.base_model import BaseModel
-import models
+from models.user import User
 
 
 class TestUser(unittest.TestCase):
     """ Test class User"""
-    def user(self):
-        
+    def test_user(self):
+        u = User()
+        self.assertTrue(hasattr(u, "id"))
+        self.assertTrue(hasattr(u, "created_at"))
+        self.assertTrue(hasattr(u, "updated_at"))
+        self.assertTrue(hasattr(u, "first_name"))
+        self.assertTrue(hasattr(u, "last_name"))
+        self.assertTrue(hasattr(u, "email"))
+        self.assertTrue(hasattr(u, "password"))
+        self.assertEqual(u.first_name, "")
+        self.assertEqual(u.last_name, "")
+        self.assertEqual(u.email, "")
+        self.assertEqual(u.password, "")
+        u.first_name = "Betty"
+        u.last_name = "Bar"
+        u.email = "airbnb@mail.com"
+        u.password = "root"
+        s = f"[{u.__class__.__name__}] ({u.id}) {u.__dict__}"
+        self.assertEqual(s, str(u))
 
-    pass
+if __name__ == '__main__':
+    unittest.main()

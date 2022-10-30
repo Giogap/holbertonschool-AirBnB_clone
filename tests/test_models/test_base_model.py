@@ -6,7 +6,6 @@ Test BaseModel
 
 from models.base_model import BaseModel
 import unittest
-from datetime import datetime
 
 
 class TestsBaseModel(unittest.TestCase):
