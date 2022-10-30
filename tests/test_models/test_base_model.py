@@ -17,5 +17,3 @@ class TestsBaseModel(unittest.TestCase):
         dt.save()
         myModel2 = dt.update_at
         self.assertNotEqual(myModel, myModel2)
-
-
