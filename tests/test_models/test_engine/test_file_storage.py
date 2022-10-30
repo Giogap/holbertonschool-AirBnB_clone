@@ -31,11 +31,18 @@ class TestFileStorage(unittest.TestCase):
             file_json = r.read()
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
 
-    def test_reload_storage(self):
+    def test_file(self):
+        """test reload"""
         storage = FileStorage()
+        obj = storage.all()
+        copy = obj.copy()
+        models.storage.reload()
+        copy2 = obj.copy()
+        self.assertEqual(len(copy), len(copy2))
         storage.save()
-        storage.reload()
-        self.assertTrue(len(storage.all()) > 0)
+        self.assertIsInstance(storage._FileStorage__file_path, str)
+        self.assertIsInstance(storage._FileStorage__objects, dict)
+        self.assertTrue(os.path.exists("file.json"))
 
 
 if __name__ == '__main__':
