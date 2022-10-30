@@ -101,7 +101,7 @@ This abstraction will also allow you to change the type of storage easily withou
 
 The console will be a tool to validate this storage engine
 
-![This is an image](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/imagen_proyect.png)
+![This is an image](https://github.com/Giogap/holbertonschool-AirBnB_clone/blob/main/Img/imagen_proyect.png)
 
 ## How to Use It
 
