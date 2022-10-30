@@ -31,7 +31,6 @@ class TestFileStorage(unittest.TestCase):
             file_json = r.read()
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
 
-    
     def test_file(self):
         """test reload"""
         storage = FileStorage()
@@ -51,6 +50,18 @@ class TestFileStorage(unittest.TestCase):
         Storage.reload()
         self.assertIsNotNone(Storage.all())
         self.assertIs(Storage.all(), Storage.all())
+
+    def test_save_reload(self):
+        """ checking save and reload method """
+        storage = FileStorage()
+        base = BaseModel()
+        base.name = "Betty"
+        bid = base.id
+        storage.new(base)
+        storage.save()
+        storage.reload()
+        self.assertIsNotNone(
+            storage.all()[base.__class__.__name__ + "." + bid])
 
 
 if __name__ == '__main__':
