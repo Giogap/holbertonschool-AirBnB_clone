@@ -7,10 +7,13 @@ import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 import models
+import os.path
 
 
 class TestFileStorage(unittest.TestCase):
     """TestCase FileStorage"""
+    storage = FileStorage()
+    obj = storage.all()
     def test_fileStorage(self):
         self.assertIsNotNone(obj)
         self.assertEqual(type(obj), dict)
@@ -18,6 +21,8 @@ class TestFileStorage(unittest.TestCase):
 
     def test_fileStore_save(self):
         """Test FileStore Save"""
+        storage = FileStorage()
+        base = BaseModel()
         storage.new(base)
         storage.save()
         with open("file.json", "r", encoding='utf-8') as r:
@@ -28,6 +33,8 @@ class TestFileStorage(unittest.TestCase):
 
     def test_file(self):
         """test reload"""
+        storage = FileStorage()
+        obj = storage.all()
         copy = obj.copy()
         models.storage.reload()
         copy2 = obj.copy()
@@ -39,6 +46,8 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload(self):
         """ Test Reload"""
+        storage = FileStorage()
+        base = BaseModel()
         storage.save()
         for obj in storage.all().values():
             loaded = obj
@@ -46,6 +55,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload_empty(self):
         """ Doc """
+        storage = FileStorage()
         with open('file.json', 'w') as f:
             pass
         with self.assertRaises(ValueError):
@@ -53,13 +63,14 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload_none(self):
         """ Doc """
+        storage = FileStorage()
         self.assertEqual(storage.reload(), None)
 
 
-storage = FileStorage()
-obj = storage.all()
-base = BaseModel()
-storage.reload()
+
+
+
+
 
 
 if __name__ == '__main__':
