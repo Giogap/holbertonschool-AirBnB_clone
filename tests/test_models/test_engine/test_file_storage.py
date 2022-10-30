@@ -5,6 +5,7 @@ import unittest
 from models.engine.file_storage import FileStorage
 import models
 from models.base_model import BaseModel
+import os
 
 
 class TestFileStorage(unittest.TestCase):
@@ -15,19 +16,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNotNone(obj)
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
-
-    
-    def test_file_path(self):
-        """ Test FilePath"""
-        self.assertFalse(hasattr(FileStorage(), "__file_path"), False)
-
-    def test_reload(self):
-        self.assertTrue(hasattr(FileStorage(), "reload"), True)
-
-    def test_reload_args(self):
-        storage = FileStorage()
-        with self.assertRaises(TypeError):
-            storage.reload(None)
 
     def test_fileStore_save(self):
         """Test FileStore Save"""
@@ -40,6 +28,21 @@ class TestFileStorage(unittest.TestCase):
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
             file_json = r.read()
             self.assertTrue(f"BaseModel.{base.id}" in file_Json)
+
+    
+    def test_reload(self):
+        """test reload"""
+        storage = FileStorage()
+        obj = storage.all()
+        copy = obj.copy()
+        models.storage.reload()
+        copy2 = obj.copy()
+        self.assertEqual(len(copy), len(copy2))
+        storage.save()
+        self.assertIsInstance(storage._FileStorage__file_path, str)
+        self.assertIsInstance(storage._FileStorage__objects, dict)
+        self.assertTrue(os.path.exists("file.json"))
+
 
 if __name__ == '__main__':
     unittest.main()
