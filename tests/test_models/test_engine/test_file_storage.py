@@ -16,6 +16,11 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
 
+    
+    def test_file_path(self):
+        """ Test FilePath"""
+        self.assertFalse(hasattr(FileStorage(), "__file_path"), False)
+
     def test_fileStore_save(self):
         """Test FileStore Save"""
         storage = FileStorage()
