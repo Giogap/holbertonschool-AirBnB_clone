@@ -132,10 +132,12 @@ Quit command to exit the program
 ```
 
 create:
+```
 ./console.py 
 (hbnb) create BaseModel
 bb711919-2e80-4ce2-85aa-454484f89013
 (hbnb) 
+```
 
 show:
 ./console.py 
