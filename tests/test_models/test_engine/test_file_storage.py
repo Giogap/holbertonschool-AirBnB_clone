@@ -15,3 +15,18 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNotNone(obj)
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
+
+    def test_fileStore_save(self):
+        """Test FileStore Save"""
+        storage = FileStorage()
+        base = BaseModel()
+        storage.new(base)
+        storage.save()
+        with open("file.json", "r", encoding='utf-8') as r:
+            file_Json = r.read()
+            self.assertTrue(f"BaseModel.{base.id}" in file_Json)
+            file_json = r.read()
+            self.assertTrue(f"BaseModel.{base.id}" in file_Json)
+
+if __name__ == '__main__':
+    unittest.main()
