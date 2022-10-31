@@ -11,7 +11,7 @@ class TestCity(unittest.TestCase):
     def test_city(self):
         """Test User"""
         c = City()
-        self.assertTrue(issubclass(u.__class__, BaseModel))
+        self.assertTrue(issubclass(c.__class__, BaseModel))
         self.assertTrue(hasattr(c, "id"))
         self.assertTrue(hasattr(c, "created_at"))
         self.assertTrue(hasattr(c, "updated_at"))
