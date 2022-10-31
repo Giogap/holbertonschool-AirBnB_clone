@@ -47,7 +47,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload(self):
         """Doc"""
-        self.obj.save()
+        #self.obj.save()
         id = self.obj.id
         new = False
         storage = FileStorage()
