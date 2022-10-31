@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """Test user"""
 import unittest
-from models.state import State
+from models.amenity import Amenity
 from models.base_model import BaseModel
 
 
 class TestState(unittest.TestCase):
     """class Test from user"""
 
-    def test_state(self):
+    def test_amenity(self):
         """Test User"""
-        a = State()
+        a = Amenity()
         self.assertTrue(issubclass(a.__class__, BaseModel))
         self.assertTrue(hasattr(a, "id"))
         self.assertTrue(hasattr(a, "created_at"))
