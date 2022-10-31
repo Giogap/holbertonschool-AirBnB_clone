@@ -15,11 +15,6 @@ class TestCity(unittest.TestCase):
         self.assertTrue(hasattr(c, "id"))
         self.assertTrue(hasattr(c, "created_at"))
         self.assertTrue(hasattr(c, "updated_at"))
-        self.assertTrue(hasattr(c, "first_name"))
-        self.assertTrue(hasattr(c, "last_name"))
-        self.assertTrue(hasattr(c, "email"))
-        self.assertTrue(hasattr(c, "password"))
-        self.assertEqual(c.state_id, "")
         self.assertEqual(c.name, "")
 
         c.state_id = "89"
