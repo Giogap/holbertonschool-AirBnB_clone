@@ -36,7 +36,7 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         obj = storage.all()
         copy = obj.copy()
-        storage.reload()
+        models.storage.reload()
         copy2 = obj.copy()
         self.assertEqual(len(copy), len(copy2))
         storage.save()
@@ -45,7 +45,20 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(os.path.exists("file.json"))
 
 
-    
+    def test_reload(self):
+        """Doc"""
+        base = BaseModel()
+        self.base.save()
+        nId = self.base.id
+        new = False
+        storage = FileStorage()
+        storage.reload()
+        objs = storage.all()
+        for i in objs.keys():
+            if id in i:
+                new = True
+        self.assertTrue(new)
+
 
 if __name__ == '__main__':
     unittest.main()
