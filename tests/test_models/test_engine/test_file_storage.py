@@ -49,13 +49,13 @@ class TestFileStorage(unittest.TestCase):
         """Doc"""
         base = BaseModel()
         self.base.save()
-        id = self.base.id
+        nId = self.base.id
         new = False
         storage = FileStorage()
         storage.reload()
         objs = storage.all()
         for i in objs.keys():
-            if id in i:
+            if nId in i:
                 new = True
         self.assertTrue(new)
 
