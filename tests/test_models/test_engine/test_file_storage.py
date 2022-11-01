@@ -36,7 +36,7 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         obj = storage.all()
         copy = obj.copy()
-        models.storage.reload()
+        storage.reload()
         copy2 = obj.copy()
         self.assertEqual(len(copy), len(copy2))
         storage.save()
@@ -49,7 +49,7 @@ class TestFileStorage(unittest.TestCase):
         """Doc"""
         base = BaseModel()
         self.base.save()
-        id = self.base.id
+        nId = self.base.id
         new = False
         storage = FileStorage()
         storage.reload()
