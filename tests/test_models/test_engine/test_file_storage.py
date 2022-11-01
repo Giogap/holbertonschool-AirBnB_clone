@@ -47,14 +47,15 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload(self):
         """Doc"""
-        self.nObj.save()
-        id = self.nObj.id
+        base = BaseModel()
+        self.base.save()
+        id = self.base.id
         new = False
         storage = FileStorage()
         storage.reload()
         objs = storage.all()
         for i in objs.keys():
-            if id in i:
+            if nId in i:
                 new = True
         self.assertTrue(new)
 
